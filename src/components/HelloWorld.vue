@@ -5,10 +5,37 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    testApiCall() {
+      axios.get('http://localhost/ash-blog/api/login.php',
+      {headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+      }})
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+        console.log('something finally')
+      });
+
+    }
+  },
+  mounted() {
+    this.testApiCall()
   }
 }
 </script>

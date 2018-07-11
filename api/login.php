@@ -1,6 +1,7 @@
 <?php
 // Open a MySQL connection
-include "config/db_config.php";
+include 'config/db_config.php';
+include 'engine/cors.php';
 header('Content-Type: application/json');
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
