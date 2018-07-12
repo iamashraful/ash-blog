@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     testApiCall() {
-      axios.get('http://localhost/ash-blog/api/login.php',
+      axios.get('http://localhost/ash-blog/api/browser_test.php',
       {headers: {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'
